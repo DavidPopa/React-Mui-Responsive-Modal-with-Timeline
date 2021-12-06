@@ -5,7 +5,7 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { AiOutlineClose } from "react-icons/ai";
-import { AppBar,Container,Toolbar,Typography } from "@material-ui/core";
+import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
       color: "#3c52b2",
     },
   },
-  container:{
-    height:"500px",
+  container: {
+    height: "500px",
   },
 }));
 
@@ -83,17 +83,18 @@ export default function AnimatedModal(props) {
                 <p>2</p>
                 <p>3</p>
                 <p>4</p>
+                <p>5</p>
               </Container>
               {/* #TODO: add footer as a separate container with background contrast color*/}
               <footer>
                 <AppBar position="static" color="primary">
-                    <Container maxWidth="300px">
-                      <Toolbar>
-                        <Typography variant="body1" color="inherit">
-                          &copy; David
-                        </Typography>
-                      </Toolbar>
-                    </Container>
+                  <Container maxWidth="300px">
+                    <Toolbar>
+                      <Typography variant="body1" color="inherit">
+                        &copy; David
+                      </Typography>
+                    </Toolbar>
+                  </Container>
                 </AppBar>
               </footer>
             </body>
