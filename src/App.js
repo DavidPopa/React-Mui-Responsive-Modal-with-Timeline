@@ -21,12 +21,10 @@ const App = () => {
 
   const addAttributes = (data) => {
     // this function will add the length of the object as a new attribute and a concatenation of all the titles from events in another string
-    // console.log(data);
-    // let a = Object.keys(data).length;
-    // console.log(a);
-    // Object.entries(data).map((v) => {
-    //   console.log(v);
-    // });
+    Object.values(data).map(val=>{
+      let lenghtObj = Object.keys(val).length
+      return lenghtObj
+    })
   };
   addAttributes(data);
   return (
@@ -45,19 +43,10 @@ const App = () => {
           {dataInfos.map((dataInfo) => {
             return (
               <tr>
-                {/* FIXME:reduce to a single map */}
-                {Object.values(dataInfo).map((val) => {
-                  console.log(val);
+                {Object.values(dataInfo).map((value) => {
                   return (
                     <td>
-                      {/* TODO: remove typeof check */}
-                      {typeof val === "object"
-                        ? Object.values(val).map((v) => {
-                            // Object.entries(v).map((entry) => {
-                            //   return entry[1];
-                            // });
-                          })
-                        : val}
+                    {JSON.stringify(value)}
                     </td>
                   );
                 })}

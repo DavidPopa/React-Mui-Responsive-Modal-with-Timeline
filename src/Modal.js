@@ -5,6 +5,7 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { AiOutlineClose } from "react-icons/ai";
+import { AppBar,Container,Toolbar,Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -16,8 +17,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     border: "0.2rem  #000",
     borderRadius: "10px",
-    width: "90%",
-    height: "90%",
+    width: "95%",
     boxShadow: theme.shadows[5],
     position: "relative",
   },
@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     right: "0",
     top: "-0.03rem",
-
     borderRadius: "0px 10px 0px 0px",
     "&:hover": {
       backgroundColor: "red",
@@ -40,11 +39,8 @@ const useStyles = makeStyles((theme) => ({
       color: "#3c52b2",
     },
   },
-  body: {
-    paddingTop: "15%",
-  },
-  footer: {
-    paddingTop: "10%",
+  container:{
+    height:"500px",
   },
 }));
 
@@ -74,24 +70,33 @@ export default function AnimatedModal(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <Button className={classes.btn} onClick={handleClose}>
-              <AiOutlineClose size="1rem" />
-            </Button>
             <header>
-              <h1>Lorem ipsum</h1>
-              <h2>{props.id}</h2>
+              <Button className={classes.btn} onClick={handleClose}>
+                <AiOutlineClose size="1rem" />
+              </Button>
             </header>
-            <body className={classes.body}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                accumsan odio enim.
+            <body>
+              <Container className={classes.container}>
                 <h1>{props.fullName}</h1>
-              </p>
+                <h2>{props.id}</h2>
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+              </Container>
+              {/* #TODO: add footer as a separate container with background contrast color*/}
+              <footer>
+                <AppBar position="static" color="primary">
+                    <Container maxWidth="300px">
+                      <Toolbar>
+                        <Typography variant="body1" color="inherit">
+                          &copy; David
+                        </Typography>
+                      </Toolbar>
+                    </Container>
+                </AppBar>
+              </footer>
             </body>
-            {/* TODO: add footer as a separate container with background contrast color*/}
-            <footer className={classes.footer}>
-              <p>valeu</p>
-            </footer>
           </div>
         </Fade>
       </Modal>

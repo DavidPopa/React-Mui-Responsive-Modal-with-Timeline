@@ -4,8 +4,7 @@
     "nameEvents": [
       {
         "name": "event1",
-        "type": "test1",
-        "da": "da"
+        "type": "test1"
       }
     ],
     "fullName": "Jenny Chan",
