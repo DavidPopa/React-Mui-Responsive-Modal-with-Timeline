@@ -7,6 +7,22 @@ import Fade from "@material-ui/core/Fade";
 import { AiOutlineClose } from "react-icons/ai";
 import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
 
+function getModalStyle() {
+  return {
+    width: '90%',
+    maxWidth: '100vw',
+    maxHeight: '90%',
+    position: 'fixed',
+    top: '50%',
+    height: '80%',
+    left:  '5%',
+    transform: 'translate(0, -50%)',
+    overflowY: 'auto'
+  };
+}
+
+
+
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -17,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     border: "0.2rem  #000",
     borderRadius: "10px",
-    width: "95%",
+    width: 1500,
     boxShadow: theme.shadows[5],
     position: "relative",
   },
@@ -39,12 +55,13 @@ const useStyles = makeStyles((theme) => ({
       color: "#3c52b2",
     },
   },
-  container: {
-    height: "500px",
-  },
+  // container: {
+  //   height: "100%",
+  // },
 }));
 
 export default function AnimatedModal(props) {
+  const [modalStyle] = React.useState(getModalStyle);
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -54,6 +71,16 @@ export default function AnimatedModal(props) {
   const handleClose = () => {
     setOpen(false);
   };
+
+
+  // TODO: 1. create function which get the item from the object
+  //       2. import data object (data.json)
+  //       3. filter data object by item id (props)
+  //       4. create body of modal (timeline) as a separate component
+  //       5. pass item as props to body
+  //       6. display item values as timeline (first draft)
+
+  
   return (
     <div>
       <Button color="primary" className={classes.btnBig} onClick={handleOpen}>
@@ -69,7 +96,10 @@ export default function AnimatedModal(props) {
         BackdropComponent={Backdrop}
       >
         <Fade in={open}>
-          <div className={classes.paper}>
+          <div 
+          style={modalStyle} 
+          className={classes.paper}
+          >
             <header>
               <Button className={classes.btn} onClick={handleClose}>
                 <AiOutlineClose size="1rem" />
@@ -87,7 +117,12 @@ export default function AnimatedModal(props) {
               </Container>
               {/* #TODO: add footer as a separate container with background contrast color*/}
               <footer>
-                <AppBar position="static" color="primary">
+                <AppBar 
+                position="fixed" 
+                color="primary"
+                sx={{ top: 50, bottom: 0 }}
+                >
+                  
                   <Container maxWidth="300px">
                     <Toolbar>
                       <Typography variant="body1" color="inherit">

@@ -19,14 +19,25 @@ const App = () => {
     return unique;
   };
 
+  
   const addAttributes = (data) => {
     // this function will add the length of the object as a new attribute and a concatenation of all the titles from events in another string
     Object.values(data).map((val) => {
       let lenghtObj = Object.keys(val).length;
       return lenghtObj;
     });
+
+    // TODO:  1. create a copy of the data object (dataInfos) e.g. newDataInfos
+        let newDataInfos = dataInfos
+          //  2. add attributes to newDataInfos (push)
+          
+          //  3. set data infos with new value (newDataInfos) using the set function
+
+          //  4. check if dataInfos has been updated
+
+          //  5. study about react useState asynchronus behaviour (!!!important!!!)
   };
-  // console.log(addAttributes(data));
+  
   addAttributes(dataInfos);
   return (
     <div className="App">
