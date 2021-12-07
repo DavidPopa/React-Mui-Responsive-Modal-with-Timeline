@@ -7,6 +7,8 @@ import Fade from "@material-ui/core/Fade";
 import { AiOutlineClose } from "react-icons/ai";
 import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
 
+
+// format modal size and position
 function getModalStyle() {
   return {
     width: '90%',
@@ -86,6 +88,8 @@ export default function AnimatedModal(props) {
       <Button color="primary" className={classes.btnBig} onClick={handleOpen}>
         Timeline
       </Button>
+      {/* FIXME: (optional) make modal responsive => something does not work properly here ... */}
+      {/* TODO: study what position should best fit the timeline (absolute or fixed???) */}
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -107,6 +111,8 @@ export default function AnimatedModal(props) {
             </header>
             <body>
               <Container className={classes.container}>
+                {/* TODO: style container to 80% width of modal / 80% height and centered. add border during dev */}
+                {/* TODO: check how to scroll modal left right using the scroll of the mouse*/}
                 <h1>{props.fullName}</h1>
                 <h2>{props.id}</h2>
                 <p>1</p>
@@ -116,7 +122,8 @@ export default function AnimatedModal(props) {
                 <p>5</p>
               </Container>
               {/* #TODO: add footer as a separate container with background contrast color*/}
-              <footer>
+              {/* FIXME: (optional) make footer be positined on the bottom of the modal, even in the responsive mood */}
+              {/* <footer>
                 <AppBar 
                 position="fixed" 
                 color="primary"
@@ -131,7 +138,7 @@ export default function AnimatedModal(props) {
                     </Toolbar>
                   </Container>
                 </AppBar>
-              </footer>
+              </footer> */}
             </body>
           </div>
         </Fade>
