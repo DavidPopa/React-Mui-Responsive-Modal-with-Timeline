@@ -21,12 +21,13 @@ const App = () => {
 
   const addAttributes = (data) => {
     // this function will add the length of the object as a new attribute and a concatenation of all the titles from events in another string
-    Object.values(data).map(val=>{
-      let lenghtObj = Object.keys(val).length
-      return lenghtObj
-    })
+    Object.values(data).map((val) => {
+      let lenghtObj = Object.keys(val).length;
+      return lenghtObj;
+    });
   };
-  addAttributes(data);
+  // console.log(addAttributes(data));
+  addAttributes(dataInfos);
   return (
     <div className="App">
       <table>
@@ -44,11 +45,7 @@ const App = () => {
             return (
               <tr>
                 {Object.values(dataInfo).map((value) => {
-                  return (
-                    <td>
-                    {JSON.stringify(value)}
-                    </td>
-                  );
+                  return <td>{JSON.stringify(value)}</td>;
                 })}
                 {/* TODO: add length property to object before it is being rendered, as well as creating another atribute which would contain the concatenation of the strings from "events" */}
                 <td>{}</td>
