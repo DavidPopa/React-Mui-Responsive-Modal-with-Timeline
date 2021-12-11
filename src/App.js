@@ -19,25 +19,21 @@ const App = () => {
     return unique;
   };
 
-  const addAttributes = (data) => {
-    // this function will add the length of the object as a new attribute and a concatenation of all the titles from events in another string
-    Object.values(data).map((val) => {
+  const lenAttributes = (data) => {
+    return Object.values(data).map((val) => {
       let lenghtObj = Object.keys(val).length;
       return lenghtObj;
     });
-
-    // TODO:  1. create a copy of the data object (dataInfos) e.g. newDataInfos
-    let newDataInfos = dataInfos;
-    //  2. add attributes to newDataInfos (push)
-
-    //  3. set data infos with new value (newDataInfos) using the set function
-
-    //  4. check if dataInfos has been updated
-
-    //  5. study about react useState asynchronus behaviour (!!!important!!!)
   };
+  // TODO:  1. create a copy of the data object (dataInfos) e.g. newDataInfos
+  const [newDataInfos, setNewDataInfos] = useState(data);
+  //  2. add attributes to newDataInfos (push)
+  //  3. set data infos with new value (newDataInfos) using the set function
+  newDataInfos.forEach((elem, i) => {
+    elem.Length = lenAttributes(data)[i];
+  }); //  4. check if dataInfos has been updated
 
-  addAttributes(dataInfos);
+  //  5. study about react useState asynchronus behaviour (!!!important!!!)
   return (
     <div className="App">
       <table>
@@ -46,7 +42,6 @@ const App = () => {
             {getData(data).map((val, index) => (
               <td key={index}>{val}</td>
             ))}
-            <td>Length</td>
             <td>Actions</td>
           </tr>
         </thead>
@@ -57,8 +52,6 @@ const App = () => {
                 {Object.values(dataInfo).map((value) => {
                   return <td>{JSON.stringify(value)}</td>;
                 })}
-                {/* TODO: add length property to object before it is being rendered, as well as creating another atribute which would contain the concatenation of the strings from "events" */}
-                <td>{}</td>
                 <td>
                   <Button>
                     {

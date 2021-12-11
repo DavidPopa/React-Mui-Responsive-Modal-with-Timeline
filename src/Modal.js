@@ -5,8 +5,9 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { AiOutlineClose } from "react-icons/ai";
-import { Container, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
 import Timeline from "./components/Timeline";
+import data from "./data.json";
 
 // format modal size and position
 function getModalStyle() {
@@ -110,13 +111,12 @@ export default function AnimatedModal(props) {
               </Container>
               {/* #TODO: add footer as a separate container with background contrast color*/}
               {/* FIXME: (optional) make footer be positined on the bottom of the modal, even in the responsive mood */}
-              {/* <footer>
-                <AppBar 
-                position="fixed" 
-                color="primary"
-                sx={{ top: 50, bottom: 0 }}
+              <footer>
+                <AppBar
+                  position="fixed"
+                  color="primary"
+                  sx={{ top: 50, bottom: 0 }}
                 >
-                  
                   <Container maxWidth="300px">
                     <Toolbar>
                       <Typography variant="body1" color="inherit">
@@ -125,7 +125,7 @@ export default function AnimatedModal(props) {
                     </Toolbar>
                   </Container>
                 </AppBar>
-              </footer> */}
+              </footer>
             </body>
           </div>
         </Fade>
