@@ -9,27 +9,31 @@
   background-color: #e17b77;
   content: "";
   position: absolute;
-  left: calc(50% - 2px);
-  width: 4px;
+  left: calc(50% - 3px);
+  width: 3px;
   height: 100%;
 }
 
 .timeline-item {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 30px;
+  align-self: flex-start;
+  justify-content: space-evenly;
   position: relative;
-  margin: 10px 0;
-  width: 50%;
+  margin: 0 0 10px 0;
 }
-
+.timeline-item:nth-child(even) {
+  align-self: flex-start;
+  justify-content: space-evenly;
+  width: 60.5%;
+}
 .timeline-item:nth-child(odd) {
   align-self: flex-end;
-  justify-content: flex-start;
-  padding-left: -30px;
-  padding-right: 0;
+  justify-content: space-evenly;
+  width: 60.5%;
 }
-
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
 .timeline-item-content {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
@@ -40,7 +44,6 @@
   padding: 15px;
   position: relative;
   width: 400px;
-  max-width: 70%;
   text-align: right;
 }
 
@@ -106,7 +109,7 @@
   right: -40px;
   width: 20px;
   height: 20px;
-  z-index: 100;
+  z-index: 1;
 }
 
 .timeline-item:nth-child(odd) .timeline-item-content .circle {
@@ -116,7 +119,7 @@
 
 @media only screen and (max-width: 1023px) {
   .timeline-item-content {
-    max-width: 100%;
+    max-width: 20%;
   }
 }
 
@@ -126,6 +129,7 @@
     padding: 15px 10px;
     text-align: center;
     align-items: center;
+    max-width: 41%;
   }
 
   .timeline-item-content .tag {

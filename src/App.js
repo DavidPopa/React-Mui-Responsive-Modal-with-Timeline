@@ -49,9 +49,22 @@ const App = () => {
           {dataInfos.map((dataInfo) => {
             return (
               <tr>
-                {Object.values(dataInfo).map((value) => {
-                  return <td>{JSON.stringify(value)}</td>;
+                {Object.values(dataInfo).map((val) => {
+                  return (
+                    <td>
+                      {typeof val === "object"
+                        ? Object.values(val).map((v) => {
+                            return (
+                              <div>
+                                {`${v.name}`} {`${v.type}`}
+                              </div>
+                            );
+                          })
+                        : val}
+                    </td>
+                  );
                 })}
+
                 <td>
                   <Button>
                     {

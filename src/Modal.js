@@ -13,14 +13,10 @@ import data from "./data.json";
 function getModalStyle() {
   return {
     width: "90%",
-    height: "80%",
-    maxWidth: "100vw",
     position: "fixed",
     top: "50%",
-    height: "80%",
-    left: "5%",
+    height: "90%",
     transform: "translate(0, -50%)",
-    overflowY: "auto",
   };
 }
 
@@ -78,6 +74,8 @@ export default function AnimatedModal(props) {
   //       5. pass item as props to body
   //       6. display item values as timeline (first draft)
 
+  // https://stackoverflow.com/questions/53613196/react-filter-props-by-object-property-on-click
+
   return (
     <div>
       <Button color="primary" className={classes.btnBig} onClick={handleOpen}>
@@ -98,7 +96,7 @@ export default function AnimatedModal(props) {
           <div style={modalStyle} className={classes.paper}>
             <header>
               <Button className={classes.btn} onClick={handleClose}>
-                <AiOutlineClose size="1rem" />
+                <AiOutlineClose size="2rem" />
               </Button>
             </header>
             <body>
@@ -111,21 +109,19 @@ export default function AnimatedModal(props) {
               </Container>
               {/* #TODO: add footer as a separate container with background contrast color*/}
               {/* FIXME: (optional) make footer be positined on the bottom of the modal, even in the responsive mood */}
-              <footer>
+              {/* <footer>
                 <AppBar
                   position="fixed"
                   color="primary"
-                  sx={{ top: 50, bottom: 0 }}
+                  sx={{ top: 0, bottom: 0 }}
                 >
-                  <Container maxWidth="300px">
-                    <Toolbar>
-                      <Typography variant="body1" color="inherit">
-                        &copy; David
-                      </Typography>
-                    </Toolbar>
-                  </Container>
+                  <Toolbar>
+                    <Typography variant="body1" color="inherit">
+                      &copy; David
+                    </Typography>
+                  </Toolbar>
                 </AppBar>
-              </footer>
+              </footer> */}
             </body>
           </div>
         </Fade>
