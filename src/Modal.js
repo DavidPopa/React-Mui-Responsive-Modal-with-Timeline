@@ -74,8 +74,6 @@ export default function AnimatedModal(props) {
   //       5. pass item as props to body
   //       6. display item values as timeline (first draft)
 
-  // https://stackoverflow.com/questions/53613196/react-filter-props-by-object-property-on-click
-
   return (
     <div>
       <Button color="primary" className={classes.btnBig} onClick={handleOpen}>
