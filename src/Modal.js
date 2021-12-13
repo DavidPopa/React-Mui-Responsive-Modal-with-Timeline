@@ -68,9 +68,9 @@ export default function AnimatedModal(props) {
   };
 
   // TODO: 1. create function which get the item from the object
-  //       2. import data object (data.json)
+  //       2. import data object (data.json) (((facut)))
   //       3. filter data object by item id (props)
-  //       4. create body of modal (timeline) as a separate component
+  //       4. create body of modal (timeline) as a separate component (((facut)))
   //       5. pass item as props to body
   //       6. display item values as timeline (first draft)
 
