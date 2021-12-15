@@ -1,143 +1,89 @@
-.timeline-container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin: 40px 0;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.timeline-container::after {
-  background-color: #e17b77;
+body {
+  font-family: "Poppins", sans-serif;
+}
+.timeline-items {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.timeline-items::before {
   content: "";
   position: absolute;
-  left: calc(50% - 3px);
-  width: 3px;
+  width: 4px;
   height: 100%;
+  background-color: #eaa023;
+  left: calc(50% - 1px);
 }
-
 .timeline-item {
-  display: flex;
-  align-self: flex-start;
-  justify-content: space-evenly;
+  margin-bottom: 40px;
+  width: 100%;
   position: relative;
-  margin: 0 0 10px 0;
-}
-.timeline-item:nth-child(even) {
-  align-self: flex-start;
-  justify-content: space-evenly;
-  width: 60.5%;
-}
-.timeline-item:nth-child(odd) {
-  align-self: flex-end;
-  justify-content: space-evenly;
-  width: 60.5%;
 }
 .timeline-item:last-child {
   margin-bottom: 0;
 }
-.timeline-item-content {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 15px;
-  position: relative;
-  width: 400px;
+.timeline-item:nth-child(odd) {
+  padding-right: calc(50% + 30px);
   text-align: right;
 }
-
-.timeline-item-content::after {
-  content: " ";
-  background-color: #fff;
-  box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.2);
+.timeline-item:nth-child(even) {
+  padding-left: calc(50% + 30px);
+}
+.timeline-dot {
+  height: 16px;
+  width: 16px;
+  background-color: #c7beaf;
   position: absolute;
-  right: -7.5px;
-  top: calc(50% - 7.5px);
-  transform: rotate(45deg);
-  width: 15px;
-  height: 15px;
-}
-
-.timeline-item:nth-child(odd) .timeline-item-content {
-  text-align: left;
-  align-items: flex-start;
-}
-
-.timeline-item:nth-child(odd) .timeline-item-content::after {
-  right: auto;
-  left: -7.5px;
-  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.timeline-item-content .tag {
-  color: #000;
-  font-size: 12px;
-  font-weight: bold;
-  top: 5px;
-  left: 5px;
-  letter-spacing: 1px;
-  padding: 5px;
-  position: absolute;
-  text-transform: uppercase;
-}
-
-.timeline-item:nth-child(odd) .timeline-item-content .tag {
-  left: auto;
-  right: 5px;
-}
-
-.timeline-item-content time {
-  color: #777;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.timeline-item-content p {
-  font-size: 16px;
-  line-height: 24px;
-  margin: 15px 0;
-  max-width: 250px;
-}
-
-.timeline-item-content .circle {
-  background-color: #fff;
-  border: 3px solid #e17b77;
+  left: calc(50% - 7px);
   border-radius: 50%;
-  position: absolute;
-  top: calc(50% - 15px);
-  right: -40px;
-  width: 20px;
-  height: 20px;
-  z-index: 1;
+  top: 10px;
+}
+.timeline-date {
+  font-size: 18px;
+  color: #eaa023;
+  margin: 6px 0 15px;
+}
+.timeline-content {
+  background-color: #2f363e;
+  padding: 30px;
+  border-radius: 5px;
+}
+.timeline-content h3 {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0 0 10px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.timeline-content p {
+  color: #c8c8c8;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
 }
 
-.timeline-item:nth-child(odd) .timeline-item-content .circle {
-  right: auto;
-  left: -40px;
-}
-
-@media only screen and (max-width: 1023px) {
-  .timeline-item-content {
-    max-width: 20%;
+/* responsive */
+@media (max-width: 767px) {
+  .timeline-items::before {
+    left: 7px;
   }
-}
-
-@media only screen and (max-width: 767px) {
-  .timeline-item-content,
-  .timeline-item:nth-child(odd) .timeline-item-content {
-    padding: 15px 10px;
-    text-align: center;
-    align-items: center;
-    max-width: 41%;
+  .timeline-item:nth-child(odd) {
+    padding-right: 0;
+    text-align: left;
   }
-
-  .timeline-item-content .tag {
-    width: calc(100% - 10px);
-    text-align: center;
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    padding-left: 37px;
   }
-
-  .timeline-item-content time {
-    margin-top: 20px;
+  .timeline-dot {
+    left: 0;
   }
 }

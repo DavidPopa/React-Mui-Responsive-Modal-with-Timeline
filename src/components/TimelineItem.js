@@ -1,12 +1,12 @@
 import React from "react";
 import "./Timeline.css";
 const TimelineItem = ({ data }) => (
-  <div className="timeline-item">
-    <div className="timeline-item-content">
-      <span className="tag">sf</span>
-      <time>sadfdsfsdfdsb</time>
-      <p>fdsfdsfsdfb</p>
-      <span className="circle" />
+  <div class="timeline-item">
+    <div class="timeline-dot"></div>
+    <div class="timeline-date">2020</div>
+    <div class="timeline-content">
+      <h3>{data}</h3>
+      <p>{data}</p>
     </div>
   </div>
 );

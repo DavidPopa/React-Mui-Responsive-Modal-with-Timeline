@@ -33,7 +33,7 @@ const App = () => {
     elem.Length = lenAttributes(data)[i];
   });
   if (dataInfos[0].Length) {
-    alert("da");
+    // alert("da");
     //  4. check if dataInfos has been updated (((facut)))
   }
 

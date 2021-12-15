@@ -103,7 +103,7 @@ export default function AnimatedModal(props) {
                 {/* TODO: check how to scroll modal left right using the scroll of the mouse*/}
                 <h1>{props.fullName}</h1>
                 <h2>{props.id}</h2>
-                <Timeline />
+                <Timeline></Timeline>
               </Container>
               {/* #TODO: add footer as a separate container with background contrast color*/}
               {/* FIXME: (optional) make footer be positined on the bottom of the modal, even in the responsive mood */}
