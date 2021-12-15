@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import data from "./data.json";
-import AnimatedModal from "./Modal";
+import ModalApp from "./Modal";
 import Button from "@material-ui/core/Button";
 
 const App = () => {
@@ -72,10 +72,10 @@ const App = () => {
                 <td>
                   <Button>
                     {
-                      <AnimatedModal
+                      <ModalApp
                         id={dataInfo.id}
                         fullName={dataInfo.fullName}
-                      ></AnimatedModal>
+                      ></ModalApp>
                     }
                   </Button>
                 </td>
