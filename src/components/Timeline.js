@@ -6,7 +6,7 @@ const Timeline = () => (
     {/* {timelineData.map((data, idx) => (
       <TimelineItem data={data.fullName} key={idx} />
     ))} */}
-    <TimelineItem>{timelineData.id}</TimelineItem>
+    <TimelineItem></TimelineItem>
     <TimelineItem></TimelineItem>
     <TimelineItem></TimelineItem>
     <TimelineItem></TimelineItem>
