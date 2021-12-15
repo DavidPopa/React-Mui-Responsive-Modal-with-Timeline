@@ -6,7 +6,7 @@ const TimelineItem = ({ data }) => (
     <div class="timeline-date">2020</div>
     <div class="timeline-content">
       <h3>{data}</h3>
-      <p>{data}</p>
+      <p></p>
     </div>
   </div>
 );

@@ -4,7 +4,7 @@ import TimelineItem from "./TimelineItem";
 const Timeline = () => (
   <div className="timeline-items">
     {/* {timelineData.map((data, idx) => (
-      <TimelineItem data={data.fullName} key={idx} />
+      <TimelineItem key={idx} />
     ))} */}
     <TimelineItem></TimelineItem>
     <TimelineItem></TimelineItem>
