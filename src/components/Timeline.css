@@ -70,7 +70,6 @@ body {
   line-height: 22px;
 }
 
-/* responsive */
 @media (max-width: 767px) {
   .timeline-items::before {
     left: 7px;
