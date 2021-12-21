@@ -4,7 +4,9 @@
     "nameEvents": [
       {
         "name": "event1",
-        "type": "test1"
+        "type": "test1",
+        "date": "2020-4-12",
+        "rank": "4"
       }
     ],
     "fullName": "Jenny Chan",

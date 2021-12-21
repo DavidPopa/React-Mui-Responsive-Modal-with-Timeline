@@ -64,7 +64,7 @@ export default function ModalApp() {
 // import data from "./data.json";
 // // TODO: 1. create function which get the item from the object
 //        2. import data object (data.json) (((facut)))
-//        3. filter data object by item id (props) api call, query
+//        3. filter data object by item id (props) api call, query, functie ca sa obtin toate atributele id-ului, useEfect
 //        4. create body of modal (timeline) as a separate component (((facut)))
 //        5. pass item as props to body
 //        6. display item values as timeline (first draft)
