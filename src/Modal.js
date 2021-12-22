@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import Button from "@material-ui/core/Button";
 import { AiOutlineClose } from "react-icons/ai";
 import Timeline from "./components/Timeline";
 import data from "./data.json";
 import "./Modal.css";
+// TODO: 1. create function which get the item from the object
+//        2. import data object (data.json) (((facut)))
+//        3. filter data object by item id (props) api call, query, functie ca sa obtin toate atributele id-ului, useEfect
+//        4. create body of modal (timeline) as a separate component (((facut)))
+//        5. pass item as props to body
+//        6. display item values as timeline (first draft)
 
 const customStyles = {
   content: {
@@ -16,8 +22,18 @@ const customStyles = {
     borderRadius: "10px 10px 10px 10px",
   },
 };
-export default function ModalApp() {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+export default function ModalApp(props) {
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [filterData] = useState(data);
+
+  useEffect(() => {
+    filterData.filter((item) => {
+      if (item.id === props.id) {
+        console.log(item.nameEvents);
+      }
+    });
+  }, [modalIsOpen]);
 
   function openModal() {
     setIsOpen(true);
@@ -40,15 +56,17 @@ export default function ModalApp() {
         </button>
         <div className="modalBck">
           <div className="modalCont">
-            <div className="title"></div>
+            <div className="title">
+              <h1>{props.fullName}</h1>
+            </div>
             <div className="body">
               <Timeline></Timeline>
             </div>
+            <footer>
+              <p>David</p>
+            </footer>
           </div>
         </div>
-        <footer>
-          <p>David</p>
-        </footer>
       </Modal>
     </div>
   );
@@ -62,12 +80,7 @@ export default function ModalApp() {
 // import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
 // import Timeline from "./components/Timeline";
 // import data from "./data.json";
-// // TODO: 1. create function which get the item from the object
-//        2. import data object (data.json) (((facut)))
-//        3. filter data object by item id (props) api call, query, functie ca sa obtin toate atributele id-ului, useEfect
-//        4. create body of modal (timeline) as a separate component (((facut)))
-//        5. pass item as props to body
-//        6. display item values as timeline (first draft)
+
 //  format modal size and position
 // function getModalStyle() {
 //   return {

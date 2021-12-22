@@ -21,6 +21,7 @@ body {
   height: 100%;
   background-color: #eaa023;
   left: calc(50% - 1px);
+  margin-bottom: 1rem;
 }
 .timeline-item {
   margin-bottom: 40px;
@@ -28,7 +29,7 @@ body {
   position: relative;
 }
 .timeline-item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 .timeline-item:nth-child(odd) {
   padding-right: calc(50% + 30px);

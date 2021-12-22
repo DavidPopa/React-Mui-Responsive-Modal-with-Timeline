@@ -60,8 +60,8 @@
         "rank": "4"
       },
       {
-        "name": "event5",
-        "type": "test5",
+        "name": "event6",
+        "type": "test6",
         "date": "2020-1-12",
         "rank": "3"
       }
@@ -75,20 +75,20 @@
     "id": 5,
     "nameEvents": [
       {
-        "name": "event5",
-        "type": "test5",
+        "name": "event7",
+        "type": "test7",
         "date": "2020-4-22",
         "rank": "4"
       },
       {
-        "name": "event5",
-        "type": "test5",
+        "name": "event8",
+        "type": "test8",
         "date": "2020-4-2",
         "rank": "4"
       },
       {
-        "name": "event5",
-        "type": "test5",
+        "name": "event9",
+        "type": "test9",
         "date": "2021-4-12",
         "rank": "2"
       }

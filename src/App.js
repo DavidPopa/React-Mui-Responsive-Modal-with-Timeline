@@ -3,9 +3,8 @@ import "./App.css";
 import data from "./data.json";
 import ModalApp from "./Modal";
 import Button from "@material-ui/core/Button";
-
 const App = () => {
-  const [dataInfos, setDataInfos] = useState(data);
+  const [dataInfos] = useState(data);
   const getData = (data) => {
     let array = [];
     for (let i in data) {
@@ -21,12 +20,12 @@ const App = () => {
 
   const lenAttributes = (data) => {
     return Object.values(data).map((val) => {
-      let lenghtObj = Object.keys(val).length;
+      let lenghtObj = Object.keys(val.nameEvents).length;
       return lenghtObj;
     });
   };
   // TODO:  1. create a copy of the data object (dataInfos) e.g. newDataInfos (((facut)))
-  const [newDataInfos, setNewDataInfos] = useState(data);
+  const [newDataInfos] = useState(data);
   //  2. add attributes to newDataInfos (push) (((facut)))
   //  3. set data infos with new value (newDataInfos) using the set function (((facut)))
   newDataInfos.forEach((elem, i) => {
@@ -36,7 +35,6 @@ const App = () => {
     // alert("da");
     //  4. check if dataInfos has been updated (((facut)))
   }
-
   //  5. study about react useState asynchronus behaviour (!!!important!!!)
   return (
     <div className="App">
@@ -75,6 +73,7 @@ const App = () => {
                       <ModalApp
                         id={dataInfo.id}
                         fullName={dataInfo.fullName}
+                        nameEvents={dataInfo.nameEvents}
                       ></ModalApp>
                     }
                   </Button>
