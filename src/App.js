@@ -5,6 +5,20 @@ import ModalApp from "./Modal";
 import Button from "@material-ui/core/Button";
 const App = () => {
   const [dataInfos] = useState(data);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalData, setModalData] = useState({
+    id: "",
+    fullName: "",
+    nameEvents: [],
+  });
+  function openModal(id, fullName, nameEvents) {
+    setModalData({
+      id: id,
+      fullName: fullName,
+      nameEvents: nameEvents,
+    });
+    setModalIsOpen(true);
+  }
   const getData = (data) => {
     let array = [];
     for (let i in data) {
@@ -68,14 +82,16 @@ const App = () => {
                 })}
 
                 <td>
-                  <Button>
-                    {
-                      <ModalApp
-                        id={dataInfo.id}
-                        fullName={dataInfo.fullName}
-                        nameEvents={dataInfo.nameEvents}
-                      ></ModalApp>
+                  <Button
+                    onClick={() =>
+                      openModal(
+                        dataInfo.id,
+                        dataInfo.fullName,
+                        dataInfo.nameEvents
+                      )
                     }
+                  >
+                    Open Timeline
                   </Button>
                 </td>
               </tr>
@@ -83,6 +99,13 @@ const App = () => {
           })}
         </tbody>
       </table>
+      <ModalApp
+        id={modalData.id}
+        fullName={modalData.fullName}
+        nameEvents={modalData.nameEvents}
+        isOpen={modalIsOpen}
+        setIsOpen={setModalIsOpen}
+      ></ModalApp>
     </div>
   );
 };

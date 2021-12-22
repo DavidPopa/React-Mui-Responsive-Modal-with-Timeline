@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import Button from "@material-ui/core/Button";
 import { AiOutlineClose } from "react-icons/ai";
-import Timeline from "./components/Timeline";
+import TimelineItem from "./components/TimelineItem";
 import data from "./data.json";
 import "./Modal.css";
 // TODO: 1. create function which get the item from the object
@@ -24,30 +24,23 @@ const customStyles = {
 };
 
 export default function ModalApp(props) {
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [filterData] = useState(data);
-
-  useEffect(() => {
-    filterData.filter((item) => {
-      if (item.id === props.id) {
-        console.log(item.nameEvents);
-      }
-    });
-  }, [modalIsOpen]);
-
-  function openModal() {
-    setIsOpen(true);
-  }
+  // useEffect(() => {
+  //   filterData.filter((item) => {
+  //     if (item.id === props.id) {
+  //       console.log(item.nameEvents);
+  //     }
+  //   });
+  //   console.log(props);
+  // }, [props.id]);
 
   function closeModal() {
-    setIsOpen(false);
+    props.setIsOpen(false);
   }
-
+  console.log(props);
   return (
     <div>
-      <Button onClick={openModal}>Open Timeline</Button>
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={props.isOpen}
         onRequestClose={closeModal}
         style={customStyles}
       >
@@ -60,7 +53,11 @@ export default function ModalApp(props) {
               <h1>{props.fullName}</h1>
             </div>
             <div className="body">
-              <Timeline></Timeline>
+              <div className="timeline-items">
+                {props.nameEvents.map((x) => {
+                  return <TimelineItem data={x} />;
+                })}
+              </div>
             </div>
             <footer>
               <p>David</p>
