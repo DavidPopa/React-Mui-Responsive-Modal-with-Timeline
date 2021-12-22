@@ -100,7 +100,6 @@ const App = () => {
         </tbody>
       </table>
       <ModalApp
-        id={modalData.id}
         fullName={modalData.fullName}
         nameEvents={modalData.nameEvents}
         isOpen={modalIsOpen}
