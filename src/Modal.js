@@ -1,9 +1,15 @@
-import React from "react";
-// import Modal from "@material-ui/core/Modal";
+// import React from "react";
+// // import Modal from "@material-ui/core/Modal";
+// import Modal from "react-modal";
+// import { AiOutlineClose } from "react-icons/ai";
+// import TimelineItem from "./components/TimelineItem";
+// import "./Modal.css";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { AiOutlineClose } from "react-icons/ai";
-import TimelineItem from "./components/TimelineItem";
+import data from "./data.json";
 import "./Modal.css";
+import TimelineItem from "./components/TimelineItem";
 // TODO: 1. create function which get the item from the object (((facut)))
 //        2. import data object (data.json) (((facut)))
 //        3. filter data object by item id (props) api call, query, functie ca sa obtin toate atributele id-ului, useEfect (((facut)))
@@ -23,6 +29,14 @@ const customStyles = {
 };
 
 export default function ModalApp(props) {
+  const [filterData] = useState(data);
+  useEffect(() => {
+    filterData.filter((item) => {
+      if (item.id === props.id) {
+        console.log(item.nameEvents);
+      }
+    });
+  }, [Modal]);
   function closeModal() {
     props.setIsOpen(false);
   }
