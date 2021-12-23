@@ -19,7 +19,7 @@ body {
   position: absolute;
   width: 4px;
   height: 100%;
-  background-color: #eaa023;
+  background-color: #ee9702;
   left: calc(50% - 1px);
   margin-bottom: 1rem;
 }
@@ -41,7 +41,7 @@ body {
 .timeline-dot {
   height: 16px;
   width: 16px;
-  background-color: #c7beaf;
+  background-color: #c58618;
   position: absolute;
   left: calc(50% - 7px);
   border-radius: 50%;
