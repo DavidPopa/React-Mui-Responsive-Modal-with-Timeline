@@ -2,7 +2,17 @@ import React from "react";
 import { AiFillStar } from "react-icons/ai";
 export default function StaRating(props) {
   const da = () => {
-    if (props.rank == 4)
+    if (props.rank == 5)
+      return (
+        <React.Fragment>
+          <AiFillStar color="gold"></AiFillStar>
+          <AiFillStar color="gold"></AiFillStar>
+          <AiFillStar color="gold"></AiFillStar>
+          <AiFillStar color="gold"></AiFillStar>
+          <AiFillStar color="gold"></AiFillStar>
+        </React.Fragment>
+      );
+    else if (props.rank == 4)
       return (
         <React.Fragment>
           <AiFillStar color="gold"></AiFillStar>
