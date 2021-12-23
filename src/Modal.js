@@ -32,15 +32,16 @@ export default function ModalApp(props) {
   const [filterData] = useState(data);
   useEffect(() => {
     filterData.filter((item) => {
-      if (item.id === props.id) {
+      // console.log(item.id);
+      console.log(props.id);
+      if (item.id !== props.id) {
         console.log(item.nameEvents);
       }
     });
-  }, [Modal]);
+  }, [props.openModal]);
   function closeModal() {
     props.setIsOpen(false);
   }
-  // console.log(props);
   return (
     <div>
       <Modal
@@ -55,6 +56,7 @@ export default function ModalApp(props) {
           <div className="modalCont">
             <div className="title">
               <h1>{props.fullName}</h1>
+              <h2>{props.id}</h2>
             </div>
             <div className="body">
               <div className="timeline-items">

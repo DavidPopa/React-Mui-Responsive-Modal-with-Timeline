@@ -85,7 +85,7 @@ const App = () => {
                   <Button
                     onClick={() =>
                       openModal(
-                        // dataInfo.id,
+                        dataInfo.id,
                         dataInfo.fullName,
                         dataInfo.nameEvents
                       )
@@ -100,6 +100,7 @@ const App = () => {
         </tbody>
       </table>
       <ModalApp
+        id={modalData.id}
         fullName={modalData.fullName}
         nameEvents={modalData.nameEvents}
         isOpen={modalIsOpen}
