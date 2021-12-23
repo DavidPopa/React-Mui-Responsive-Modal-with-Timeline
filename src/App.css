@@ -24,6 +24,7 @@ th {
 
 td {
   background-color: rgb(205, 235, 253);
+  border-radius: 25px;
 }
 
 form {
