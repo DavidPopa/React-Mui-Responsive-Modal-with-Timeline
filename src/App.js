@@ -38,18 +38,14 @@ const App = () => {
       return lenghtObj;
     });
   };
-  // TODO:  1. create a copy of the data object (dataInfos) e.g. newDataInfos (((facut)))
   const [newDataInfos] = useState(data);
-  //  2. add attributes to newDataInfos (push) (((facut)))
-  //  3. set data infos with new value (newDataInfos) using the set function (((facut)))
   newDataInfos.forEach((elem, i) => {
     elem.Length = lenAttributes(data)[i];
   });
-  if (dataInfos[0].Length) {
-    // alert("da");
-    //  4. check if dataInfos has been updated (((facut)))
-  }
-  //  5. study about react useState asynchronus behaviour (!!!important!!!)
+  // if (dataInfos[0].Length) {
+  //   // alert("da");
+  //   //  4. check if dataInfos has been updated (((facut)))
+  // }
   return (
     <div className="App">
       <table>
