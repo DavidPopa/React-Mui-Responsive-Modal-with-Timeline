@@ -17,14 +17,14 @@ const customStyles = {
 };
 
 export default function ModalApp(props) {
-  // const [filterData] = useState(data);
-  // useEffect(() => {
-  //   filterData.filter((item) => {
-  //     if (item.id === props.id) {
-  //       console.log(item.nameEvents);
-  //     }
-  //   });
-  // }, [props.isOpen]);
+  const [filterData] = useState(data);
+  useEffect(() => {
+    filterData.filter((item) => {
+      if (item.id === props.id) {
+        console.log(item.nameEvents);
+      }
+    });
+  }, [props.isOpen]);
   function closeModal() {
     props.setIsOpen(false);
   }
