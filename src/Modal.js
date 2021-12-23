@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+// import Modal from "@material-ui/core/Modal";
 import Modal from "react-modal";
-import Button from "@material-ui/core/Button";
 import { AiOutlineClose } from "react-icons/ai";
 import TimelineItem from "./components/TimelineItem";
-import data from "./data.json";
 import "./Modal.css";
-// TODO: 1. create function which get the item from the object
+// TODO: 1. create function which get the item from the object (((facut)))
 //        2. import data object (data.json) (((facut)))
-//        3. filter data object by item id (props) api call, query, functie ca sa obtin toate atributele id-ului, useEfect
+//        3. filter data object by item id (props) api call, query, functie ca sa obtin toate atributele id-ului, useEfect (((facut)))
 //        4. create body of modal (timeline) as a separate component (((facut)))
-//        5. pass item as props to body
-//        6. display item values as timeline (first draft)
+//        5. pass item as props to body (((facut)))
+//        6. display item values as timeline (first draft) (((facut)))
 
 const customStyles = {
   content: {
@@ -24,19 +23,10 @@ const customStyles = {
 };
 
 export default function ModalApp(props) {
-  // useEffect(() => {
-  //   filterData.filter((item) => {
-  //     if (item.id === props.id) {
-  //       console.log(item.nameEvents);
-  //     }
-  //   });
-  //   console.log(props);
-  // }, [props.id]);
-
   function closeModal() {
     props.setIsOpen(false);
   }
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       <Modal
@@ -54,8 +44,8 @@ export default function ModalApp(props) {
             </div>
             <div className="body">
               <div className="timeline-items">
-                {props.nameEvents.map((x) => {
-                  return <TimelineItem data={x} />;
+                {props.nameEvents.map((item) => {
+                  return <TimelineItem data={item} />;
                 })}
               </div>
             </div>
@@ -68,17 +58,17 @@ export default function ModalApp(props) {
     </div>
   );
 }
+
 // import Button from "@material-ui/core/Button";
 // import { makeStyles } from "@material-ui/core/styles";
-// import Modal from "@material-ui/core/Modal";
+
 // import Backdrop from "@material-ui/core/Backdrop";
 // import Fade from "@material-ui/core/Fade";
 // import { AiOutlineClose } from "react-icons/ai";
-// import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
+// import { Container } from "@material-ui/core";
 // import Timeline from "./components/Timeline";
-// import data from "./data.json";
 
-//  format modal size and position
+// //  format modal size and position
 // function getModalStyle() {
 //   return {
 //     width: "90%",
@@ -104,24 +94,24 @@ export default function ModalApp(props) {
 //     boxShadow: theme.shadows[5],
 //     position: "relative",
 //   },
-// btn: {
-//   position: "absolute",
-//   right: "0",
-//   top: "-0.03rem",
-//   borderRadius: "0px 10px 0px 0px",
-//   "&:hover": {
-//     backgroundColor: "red",
+//   btn: {
+//     position: "absolute",
+//     right: "0",
+//     top: "-0.03rem",
+//     borderRadius: "0px 10px 0px 0px",
+//     "&:hover": {
+//       backgroundColor: "red",
+//     },
 //   },
-// },
-// btnBig: {
-//   "& > *": {
-//     margin: theme.spacing(1),
+//   btnBig: {
+//     "& > *": {
+//       margin: theme.spacing(1),
+//     },
+//     "&:hover": {
+//       backgroundColor: "#fff",
+//       color: "#3c52b2",
+//     },
 //   },
-//   "&:hover": {
-//     backgroundColor: "#fff",
-//     color: "#3c52b2",
-//   },
-// },
 // }));
 
 // export default function AnimatedModal(props) {
@@ -155,9 +145,9 @@ export default function ModalApp(props) {
 //         <Fade in={open}>
 //           <div style={modalStyle} className={classes.paper}>
 //             <header>
-// <Button className={classes.btn} onClick={handleClose}>
-//   <AiOutlineClose size="2rem" />
-// </Button>
+//               <Button className={classes.btn} onClick={handleClose}>
+//                 <AiOutlineClose size="2rem" />
+//               </Button>
 //             </header>
 //             <body>
 //               <Container className={classes.container}>

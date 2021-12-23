@@ -85,7 +85,7 @@ const App = () => {
                   <Button
                     onClick={() =>
                       openModal(
-                        dataInfo.id,
+                        // dataInfo.id,
                         dataInfo.fullName,
                         dataInfo.nameEvents
                       )
