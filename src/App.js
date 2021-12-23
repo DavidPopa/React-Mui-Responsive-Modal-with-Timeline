@@ -103,7 +103,7 @@ const App = () => {
         id={modalData.id}
         fullName={modalData.fullName}
         nameEvents={modalData.nameEvents}
-        isOpen={modalIsOpen}
+        open={modalIsOpen}
         setIsOpen={setModalIsOpen}
       ></ModalApp>
     </div>
