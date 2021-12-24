@@ -61,7 +61,7 @@ const App = () => {
       }
     }
     // TODO: aici poti folosi ES6 syntax (set)
-    const unique = array.filter((v, i) => array.indexOf(v) === i);
+    const unique = [...new Set(array)];
 
     const index = unique.indexOf(colToRemove);
     if (index > -1) {
