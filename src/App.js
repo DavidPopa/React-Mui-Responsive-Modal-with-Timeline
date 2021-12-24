@@ -50,6 +50,7 @@ const App = () => {
         array.push(sub_key);
       }
     }
+    // TODO: aici poti folosi ES6 syntax (set)
     const unique = array.filter((v, i) => array.indexOf(v) === i);
 
     const index = unique.indexOf(colToRemove);
