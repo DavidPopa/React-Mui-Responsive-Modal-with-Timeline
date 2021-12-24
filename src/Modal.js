@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) =>
       backgroundColor: theme.palette.background.paper,
       border: "2px solid #000",
       boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
+      padding: theme.spacing(4, 4, 4),
     },
     button: {
       float: "right",
@@ -56,7 +56,7 @@ export default function ModalApp(props) {
   return (
     <div>
       <Modal open={props.isOpen} onRequestClose={closeModal}>
-        <div>
+        <div className="all">
           <div style={modalStyle} className={classes.paper}>
             <button className="btn" onClick={closeModal}>
               <AiOutlineClose size="3rem" />
