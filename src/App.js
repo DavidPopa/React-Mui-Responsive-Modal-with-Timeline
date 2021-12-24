@@ -62,7 +62,7 @@ const App = () => {
 
 
   return (
-    // TODO: make table responsive 
+    // TODO: make table responsive and limit col width. add span to display content if col content is greater than col width
     <div className="App">
       <table>
         <thead>
