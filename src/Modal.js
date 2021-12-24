@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-// import Modal from "react-modal";
 import Modal from "@material-ui/core/Modal"
 import { AiOutlineClose } from "react-icons/ai";
 import TimelineItem from "./components/TimelineItem";
