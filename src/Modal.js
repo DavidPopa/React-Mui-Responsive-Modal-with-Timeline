@@ -59,7 +59,6 @@ export default function ModalApp(props) {
       <Modal
         open={props.isOpen}
         onRequestClose={closeModal}
-        // style={customStyles}
       >
         <div>
   
@@ -88,10 +87,3 @@ export default function ModalApp(props) {
     </div>
   );
 }
-
-// TODO: 1. create function which get the item from the object (((facut)))
-//        2. import data object (data.json) (((facut)))
-//        3. filter data object by item id (props) api call, query, functie ca sa obtin toate atributele id-ului, useEfect (((facut)))
-//        4. create body of modal (timeline) as a separate component (((facut)))
-//        5. pass item as props to body (((facut)))
-//        6. display item values as timeline (first draft) (((facut)))
