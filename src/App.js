@@ -31,8 +31,7 @@ const App = () => {
   }, [])
 
   // adds properties to object
-  // TODO: create function in place of JSON.stringify to return a string as : event:name/date, ...
-
+  // TODO: create function in place of JSON.stringify to return a string as : eventname1/date1, ...
   function addAtributes(data, field) {
     let newData = data.map(obj => ({ ...obj, noOfEvents: obj[field].length, events: JSON.stringify(obj[field], ' ') }))
     setDataInput(newData)
