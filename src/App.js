@@ -4,18 +4,15 @@ import data from "./data.json";
 import ModalApp from "./Modal";
 import Button from "@material-ui/core/Button";
 
-
 const App = () => {
   const [dataInput, setDataInput] = useState(data);
   const [collumns, setCollumns] = useState();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
   const [modalData, setModalData] = useState({
     id: "",
     fullName: "",
     nameEvents: [],
   });
-
 
   function openModal(id, fullName, nameEvents) {
     setModalData({
@@ -27,15 +24,30 @@ const App = () => {
   }
 
   useEffect(() => {
-    addAtributes(data, 'nameEvents')
-  }, [])
+    addAtributes(data, "nameEvents");
+  }, []);
+
+  function getEvents(nameEvents) {
+    return nameEvents.map((value) =>
+      Object.values(value).map((last) => {
+        let found = last;
+        // console.log(found);
+        return found;
+      })
+    );
+  }
 
   // adds properties to object
-  // TODO: create function in place of JSON.stringify to return a string as : eventname1/date1, ...
+  // TODO: create function in place of JSON.stringify to return a string as : event/name1/date1, ...
   function addAtributes(data, field) {
-    let newData = data.map(obj => ({ ...obj, noOfEvents: obj[field].length, events: JSON.stringify(obj[field], ' ') }))
-    setDataInput(newData)
-    getCollumns(newData, 'nameEvents')
+    let newData = data.map((obj) => ({
+      ...obj,
+      noOfEvents: obj[field].length,
+      events: getEvents(obj[field]),
+      cl: console.log(getEvents(obj[field])),
+    }));
+    setDataInput(newData);
+    getCollumns(newData, "nameEvents");
   }
 
   // get all the collumns and remove objects
@@ -57,9 +69,8 @@ const App = () => {
       unique.splice(index, 1);
     }
 
-    setCollumns(unique)
+    setCollumns(unique);
   };
-
 
   return (
     // TODO: make table responsive and limit col width. add span to display content if col content is greater than col width
@@ -67,9 +78,8 @@ const App = () => {
       <table>
         <thead>
           <tr>
-            {collumns && collumns.map((val, index) => (
-              <td key={index}>{val}</td>
-            ))}
+            {collumns &&
+              collumns.map((val, index) => <td key={index}>{val}</td>)}
             <td>Actions</td>
           </tr>
         </thead>
@@ -77,13 +87,17 @@ const App = () => {
           {dataInput.map((dataInfo, index) => {
             return (
               <tr key={index}>
-                {collumns && collumns.map(item => {
-                  // extra check if any arrays still remain
-                  return <td>{typeof dataInfo[item] === 'object' ?
-                    null
-                    : dataInfo[item]}</td>
-                })
-                }
+                {collumns &&
+                  collumns.map((item) => {
+                    // extra check if any arrays still remain
+                    return (
+                      <td>
+                        {typeof dataInfo[item] === "object"
+                          ? null
+                          : dataInfo[item]}
+                      </td>
+                    );
+                  })}
                 <td>
                   <Button
                     onClick={() =>
