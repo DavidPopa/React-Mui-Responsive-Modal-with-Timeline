@@ -62,6 +62,7 @@ const App = () => {
 
 
   return (
+    // TODO: make table responsive 
     <div className="App">
       <table>
         <thead>
