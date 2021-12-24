@@ -44,7 +44,7 @@ const App = () => {
       ...obj,
       noOfEvents: obj[field].length,
       events: getEvents(obj[field]),
-      cl: console.log(getEvents(obj[field])),
+      // cl: console.log(getEvents(obj[field])),
     }));
     setDataInput(newData);
     getCollumns(newData, "nameEvents");
