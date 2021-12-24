@@ -31,8 +31,7 @@ const App = () => {
     return nameEvents.map((value) =>
       Object.values(value).map((last) => {
         let found = last;
-        // console.log(found);
-        return found;
+        return found + "\n";
       })
     );
   }
@@ -68,7 +67,7 @@ const App = () => {
     if (index > -1) {
       unique.splice(index, 1);
     }
-
+    // console.log(unique);
     setCollumns(unique);
   };
 
@@ -93,7 +92,7 @@ const App = () => {
                     return (
                       <td>
                         {typeof dataInfo[item] === "object"
-                          ? null
+                          ? dataInfo[item]
                           : dataInfo[item]}
                       </td>
                     );

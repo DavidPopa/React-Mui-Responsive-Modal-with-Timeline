@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import { AiOutlineClose } from "react-icons/ai";
 import TimelineItem from "./components/TimelineItem";
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     paper: {
       position: "absolute",
-      width: 1500,
+      width: "90%",
       backgroundColor: theme.palette.background.paper,
       border: "2px solid #000",
       boxShadow: theme.shadows[5],
@@ -57,11 +57,7 @@ export default function ModalApp(props) {
     <div>
       <Modal open={props.isOpen} onRequestClose={closeModal}>
         <div>
-          <div
-            className="modalBck"
-            style={modalStyle}
-            className={classes.paper}
-          >
+          <div style={modalStyle} className={classes.paper}>
             <button className="btn" onClick={closeModal}>
               <AiOutlineClose size="3rem" />
             </button>
