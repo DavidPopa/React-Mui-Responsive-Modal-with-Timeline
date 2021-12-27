@@ -35,15 +35,11 @@ const App = () => {
       })
     );
   }
-
-  // adds properties to object
-  // TODO: create function in place of JSON.stringify to return a string as : event/name1/date1, ...
   function addAtributes(data, field) {
     let newData = data.map((obj) => ({
       ...obj,
       noOfEvents: obj[field].length,
       events: getEvents(obj[field], "\n"),
-      // cl: console.log(getEvents(obj[field])),
     }));
     setDataInput(newData);
     getCollumns(newData, "nameEvents");
@@ -60,19 +56,16 @@ const App = () => {
         array.push(sub_key);
       }
     }
-    // TODO: aici poti folosi ES6 syntax (set)
     const unique = [...new Set(array)];
 
     const index = unique.indexOf(colToRemove);
     if (index > -1) {
       unique.splice(index, 1);
     }
-    // console.log(unique);
     setCollumns(unique);
   };
 
   return (
-    // TODO: make table responsive and limit col width. add span to display content if col content is greater than col width
     <div className="App">
       <table>
         <thead>

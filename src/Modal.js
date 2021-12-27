@@ -8,12 +8,11 @@ import "./Modal.css";
 
 function getModalStyle() {
   return {
-    width: "100%",
-    maxWidth: "100vw",
-    maxHeight: "100%",
+    width: "90%",
+    maxHeight: "90%",
     position: "fixed",
     top: "50%",
-    left: "0%",
+    left: "5%",
     transform: "translate(0, -50%)",
     overflowY: "auto",
   };
@@ -61,9 +60,10 @@ export default function ModalApp(props) {
             <button className="btn" onClick={closeModal}>
               <AiOutlineClose size="3rem" />
             </button>
-            <div className="modalCont">
+            <div className={classes.modalCont}>
               <div className="title">
                 <h1>{props.fullName}</h1>
+                <div className="contName">bla bla bla</div>
               </div>
               <div className="body">
                 <div className="timeline-items">
