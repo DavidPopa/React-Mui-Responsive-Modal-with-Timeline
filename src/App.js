@@ -88,7 +88,6 @@ const App = () => {
               <tr key={index}>
                 {collumns &&
                   collumns.map((item) => {
-                    // extra check if any arrays still remain
                     return (
                       <td>
                         {typeof dataInfo[item] === "object"

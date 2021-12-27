@@ -43,3 +43,31 @@ form * {
 h1 {
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  table thead {
+    display: none;
+  }
+  thead,
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+  tr {
+    margin-bottom: 15px;
+  }
+  tbody tr td {
+    text-align: center;
+    position: relative;
+  }
+  td {
+    position: absolute;
+    width: calc(50%=10%);
+    padding-left: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+  }
+}
