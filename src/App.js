@@ -29,9 +29,9 @@ const App = () => {
 
   function getEvents(nameEvents) {
     return nameEvents.map((value) =>
-      Object.values(value).map((last) => {
-        let found = last;
-        return found + " ";
+      Object.values(value).map((items) => {
+        let item = items;
+        return item + " ";
       })
     );
   }
