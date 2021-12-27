@@ -31,7 +31,7 @@ const App = () => {
     return nameEvents.map((value) =>
       Object.values(value).map((last) => {
         let found = last;
-        return found + "\n";
+        return found + " ";
       })
     );
   }
@@ -42,7 +42,7 @@ const App = () => {
     let newData = data.map((obj) => ({
       ...obj,
       noOfEvents: obj[field].length,
-      events: getEvents(obj[field]),
+      events: getEvents(obj[field], "\n"),
       // cl: console.log(getEvents(obj[field])),
     }));
     setDataInput(newData);

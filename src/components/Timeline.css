@@ -71,7 +71,7 @@ body {
   line-height: 22px;
 }
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
   border: 5px solid white;
@@ -81,7 +81,8 @@ body {
   background: linear-gradient(#e64949, #9190f1);
   border-radius: 25px;
 }
-@media (max-width: 767px) {
+@media screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
   .timeline-items::before {
     left: 7px;
   }
