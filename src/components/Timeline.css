@@ -41,7 +41,7 @@ body {
 .timeline-dot {
   height: 16px;
   width: 16px;
-  background-color: #c58618;
+  /* background-color: #c58618; */
   position: absolute;
   left: calc(50% - 7px);
   border-radius: 50%;

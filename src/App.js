@@ -13,7 +13,6 @@ const App = () => {
     fullName: "",
     nameEvents: [],
   });
-
   function openModal(id, fullName, nameEvents) {
     setModalData({
       id: id,
@@ -22,11 +21,9 @@ const App = () => {
     });
     setModalIsOpen(true);
   }
-
   useEffect(() => {
     addAtributes(data, "nameEvents");
   }, []);
-
   function getEvents(nameEvents) {
     return nameEvents.map((value) =>
       Object.values(value).map((items) => {
@@ -44,9 +41,6 @@ const App = () => {
     setDataInput(newData);
     getCollumns(newData, "nameEvents");
   }
-
-  // get all the collumns and remove objects
-  // TODO: add objects to be removed as array
   const getCollumns = (data, colToRemove) => {
     let array = [];
     for (let i in data) {
@@ -64,7 +58,6 @@ const App = () => {
     }
     setCollumns(unique);
   };
-
   return (
     <div className="App">
       <table>

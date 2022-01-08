@@ -37,15 +37,13 @@ const useStyles = makeStyles((theme) =>
 
 export default function ModalApp(props) {
   const [filterData] = useState(data);
-
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
 
   useEffect(() => {
     filterData.filter((item) => {
       if (item.id === props.id) {
-        console.log(item.nameEvents);
+        return;
       }
     });
   }, [props.isOpen]);
@@ -63,7 +61,11 @@ export default function ModalApp(props) {
             <div className={classes.modalCont}>
               <div className="title">
                 <h1>{props.fullName}</h1>
-                <div className="contName">bla bla bla</div>
+                <div className="contName">
+                  <p>min:{props.rank}</p>
+                  <p>max:4</p>
+                  <p>avg:7</p>
+                </div>
               </div>
               <div className="body">
                 <div className="timeline-items">
@@ -72,9 +74,7 @@ export default function ModalApp(props) {
                   })}
                 </div>
               </div>
-              <footer>
-                <p>David</p>
-              </footer>
+              <footer>{/* <p>David</p> */}</footer>
             </div>
           </div>
         </div>
