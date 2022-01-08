@@ -81,8 +81,7 @@ body {
   background: linear-gradient(#e64949, #9190f1);
   border-radius: 25px;
 }
-@media screen and (max-width: 760px),
-  (min-device-width: 768px) and (max-device-width: 1024px) {
+@media screen and (min-device-width: 168px) and (max-device-width: 1025px) {
   .timeline-items::before {
     left: 7px;
   }

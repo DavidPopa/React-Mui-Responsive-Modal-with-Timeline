@@ -43,7 +43,7 @@ form * {
 h1 {
   text-align: center;
 }
-@media screen and (max-width: 897px) {
+@media screen and (min-device-width: 168px) and (max-device-width: 1025px) {
   table thead {
     display: none;
   }
