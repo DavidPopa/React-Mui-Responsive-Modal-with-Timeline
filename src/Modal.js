@@ -74,7 +74,9 @@ export default function ModalApp(props) {
                   })}
                 </div>
               </div>
-              <footer>{/* <p>David</p> */}</footer>
+              {/* <footer>
+                <h2>{props.fullName}</h2>
+              </footer> */}
             </div>
           </div>
         </div>
