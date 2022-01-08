@@ -5,7 +5,7 @@ export default function TimelineItem(props) {
   function dot() {
     let array = [];
     array.push(props.data.rank);
-    if (array[0] === "1" || array[0] === "2") {
+    if (array[0] === "0" || array[0] === "1" || array[0] === "2") {
       return (
         <div className="timeline-dot" style={{ backgroundColor: "red" }}></div>
       );
