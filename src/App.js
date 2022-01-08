@@ -35,7 +35,7 @@ const App = () => {
   function addAtributes(data, field) {
     let newData = data.map((obj) => ({
       ...obj,
-      noOfEvents: obj[field].length,
+      nrOfEvents: obj[field].length,
       events: getEvents(obj[field], "\n"),
     }));
     setDataInput(newData);
@@ -92,7 +92,7 @@ const App = () => {
                       )
                     }
                   >
-                    Open Timeline
+                    <p> Open Timeline</p>
                   </Button>
                 </td>
               </tr>
