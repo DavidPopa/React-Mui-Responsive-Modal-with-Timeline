@@ -3,6 +3,7 @@ import { makeStyles, createStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import { AiOutlineClose } from "react-icons/ai";
 import TimelineItem from "./components/TimelineItem";
+import MinMax from "./components/MinMax";
 import data from "./data.json";
 import "./Modal.css";
 
@@ -62,10 +63,10 @@ export default function ModalApp(props) {
             <div className={classes.modalCont}>
               <div className="title">
                 <h1>{props.fullName}</h1>
-                <div className="contName">
-                  <p>min:{props.rank}</p>
-                  <p>max:4</p>
-                  <p>avg:7</p>
+                <div className="contVals">
+                  {props.nameEvents.map((val) => {
+                    return <MinMax value={val} />;
+                  })}
                 </div>
               </div>
               <div className="body">

@@ -17,17 +17,12 @@
   height: 90%;
   margin-top: 5rem;
 }
-.contName {
+.contVals {
   border: 1px solid black;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.contName p {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 1rem;
 }
 h2 {
   background-color: aqua;
