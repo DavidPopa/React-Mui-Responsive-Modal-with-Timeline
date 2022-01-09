@@ -13,6 +13,7 @@ const App = () => {
     fullName: "",
     nameEvents: [],
   });
+
   function openModal(id, fullName, nameEvents) {
     setModalData({
       id: id,
@@ -41,6 +42,7 @@ const App = () => {
     setDataInput(newData);
     getCollumns(newData, "nameEvents");
   }
+
   const getCollumns = (data, colToRemove) => {
     let array = [];
     for (let i in data) {

@@ -70,17 +70,6 @@ body {
   font-weight: 300;
   line-height: 22px;
 }
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  border: 5px solid white;
-  border-radius: 25px;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(#e64949, #9190f1);
-  border-radius: 25px;
-}
 @media screen and (min-device-width: 168px) and (max-device-width: 1025px) {
   .timeline-items::before {
     left: 7px;

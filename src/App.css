@@ -6,6 +6,9 @@
 }
 table {
   border-collapse: collapse;
+  border-spacing: 0 15px;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 thead {
   background-color: #95a5a6;
@@ -16,29 +19,27 @@ thead {
   letter-spacing: 0.05em;
   text-align: center;
 }
+thead tr {
+  border-radius: 10%;
+}
 tbody {
   background-color: #ffffff;
-  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
   font-size: 20px;
   text-align: center;
+}
+tbody td {
+  padding: 1rem;
+}
+tbody tr:hover {
+  background-color: #e1e6e7;
 }
 tbody p {
   font-size: 16px;
   font-weight: 400;
 }
-
-form {
-  display: flex;
-  gap: 5px;
-}
-
-form td:last-child {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-form * {
-  font-size: 28px;
+th,
+td {
+  border-bottom: 20px solid white;
 }
 h1 {
   text-align: center;
@@ -54,6 +55,7 @@ h1 {
   td {
     display: block;
     width: 100%;
+    border-radius: 1rem;
   }
   tr {
     margin-bottom: 15px;

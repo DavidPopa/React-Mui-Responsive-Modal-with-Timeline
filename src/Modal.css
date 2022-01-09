@@ -18,12 +18,13 @@
   margin-top: 5rem;
 }
 .contVals {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-h2 {
-  background-color: aqua;
+footer {
+  margin-top: 1rem;
+  background-color: rgb(232, 243, 243);
 }

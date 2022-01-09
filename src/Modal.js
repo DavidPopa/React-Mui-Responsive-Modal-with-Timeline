@@ -41,6 +41,13 @@ export default function ModalApp(props) {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
 
+  function getAllRank() {
+    let arrayOfRanks = [];
+    return props.nameEvents.map((val) => {
+      arrayOfRanks.push(val.rank);
+      return arrayOfRanks;
+    });
+  }
   useEffect(() => {
     filterData.filter((item) => {
       if (item.id === props.id) {
@@ -65,7 +72,7 @@ export default function ModalApp(props) {
                 <h1>{props.fullName}</h1>
                 <div className="contVals">
                   {props.nameEvents.map((val) => {
-                    return <MinMax value={val} />;
+                    return <MinMax value={val.rank} da={getAllRank()} />;
                   })}
                 </div>
               </div>
@@ -76,10 +83,10 @@ export default function ModalApp(props) {
                   })}
                 </div>
               </div>
-              <footer>
-                <h2>{props.fullName}</h2>
-              </footer>
             </div>
+            <footer>
+              <h2>{props.fullName}</h2>
+            </footer>
           </div>
         </div>
       </Modal>
