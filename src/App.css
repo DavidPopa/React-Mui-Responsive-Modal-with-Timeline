@@ -7,7 +7,7 @@
 table {
   border-collapse: collapse;
   border-spacing: 0 15px;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   overflow: hidden;
 }
 thead {
@@ -55,11 +55,13 @@ h1 {
   td {
     display: block;
     width: 100%;
-    border-radius: 1rem;
   }
+
   tr {
     margin-bottom: 15px;
-    border: 1px solid;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 2px solid;
   }
   tbody tr td {
     text-align: center;
@@ -71,5 +73,8 @@ h1 {
     font-weight: 600;
     font-size: 14px;
     text-align: left;
+  }
+  tbody tr:hover {
+    background-color: #ffffff;
   }
 }
