@@ -71,7 +71,6 @@ export default function ModalApp(props) {
               <div className="body">
                 <div className="timeline-items">
                   {props.nameEvents.map((item) => {
-                    console.log(typeof item.rank);
                     return <TimelineItem data={item} />;
                   })}
                 </div>
