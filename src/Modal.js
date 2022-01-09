@@ -50,6 +50,7 @@ export default function ModalApp(props) {
   function closeModal() {
     props.setIsOpen(false);
   }
+
   return (
     <div>
       <Modal open={props.isOpen} onRequestClose={closeModal}>
@@ -70,13 +71,14 @@ export default function ModalApp(props) {
               <div className="body">
                 <div className="timeline-items">
                   {props.nameEvents.map((item) => {
+                    console.log(typeof item.rank);
                     return <TimelineItem data={item} />;
                   })}
                 </div>
               </div>
-              {/* <footer>
+              <footer>
                 <h2>{props.fullName}</h2>
-              </footer> */}
+              </footer>
             </div>
           </div>
         </div>
