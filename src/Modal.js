@@ -4,6 +4,7 @@ import Modal from "@material-ui/core/Modal";
 import { AiOutlineClose } from "react-icons/ai";
 import TimelineItem from "./components/TimelineItem";
 import MinMax from "./components/MinMax";
+import ScrollToTop from "./components/ScrolToTop";
 import data from "./data.json";
 import "./Modal.css";
 
@@ -42,10 +43,8 @@ export default function ModalApp(props) {
   const [modalStyle] = React.useState(getModalStyle);
 
   function getAllRank() {
-    let arrayOfRanks = [];
     return props.nameEvents.map((val) => {
-      arrayOfRanks.push(val.rank);
-      return arrayOfRanks;
+      return parseInt(val.rank);
     });
   }
   useEffect(() => {
@@ -71,9 +70,7 @@ export default function ModalApp(props) {
               <div className="title">
                 <h1>{props.fullName}</h1>
                 <div className="contVals">
-                  {props.nameEvents.map((val) => {
-                    return <MinMax value={val.rank} da={getAllRank()} />;
-                  })}
+                  <MinMax value={getAllRank()} />
                 </div>
               </div>
               <div className="body">
@@ -84,6 +81,7 @@ export default function ModalApp(props) {
                 </div>
               </div>
             </div>
+            <ScrollToTop></ScrollToTop>
             <footer>
               <h2>{props.fullName}</h2>
             </footer>
